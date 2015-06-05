@@ -5,7 +5,7 @@ define sudo::rule (
   $servers = 'ALL',
   $comment = undef,
   $runas = 'root',
-  $nopass = false,
+  $nopass = false
 ) {
 
   sudo::register{"rule_${name}":
