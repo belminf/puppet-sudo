@@ -2,7 +2,7 @@ define sudo::cmnd (
   $what,
   $cmnd,
   $ensure = present,
-  $comment = undef,
+  $comment = undef
 ) {
 
   sudo::register{"cmnd_${name}":
