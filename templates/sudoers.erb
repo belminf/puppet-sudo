@@ -5,7 +5,6 @@
 #######
 
 Defaults  env_reset
-Defaults  secure_path="<% if @extra_path %><%= @extra_path.class == Array ? @extra_path.join(":") : @extra_path %><% end %>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 ## Runas Aliases
 Runas_Alias ROOT = root
@@ -49,17 +48,12 @@ Cmnd_Alias BACKUP = /usr/bin/rsync
 #
 <% if scope.lookupvar('sudo::params::requiretty') == true %>Defaults    requiretty<% end %>
 
-# Refuse to run if unable to disable echo on the tty. This setting should also be                                                                            # changed in order to be able to use sudo without a tty. See requiretty above.                                                                                                     
-#
-Defaults   !visiblepw                                                                                                                                                              
-                                                                                                                                                                                   
 #
 # Preserving HOME has security implications since many programs
 # use it when searching for configuration files.
 #                                                                                                                                                                                  
 Defaults    always_set_home
 
-Defaults    secure_path = /sbin:/bin:/usr/sbin:/usr/bin
 
 Defaults    env_reset
 Defaults    env_keep = "COLORS DISPLAY HOSTNAME HISTSIZE INPUTRC KDEDIR \
