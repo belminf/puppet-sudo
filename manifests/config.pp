@@ -1,5 +1,6 @@
 
 class sudo::config {
+  require sudo::install
 
   include sudo::params
   $extra_path = $sudo::params::extra_path
